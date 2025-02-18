@@ -3,8 +3,31 @@
   "extends": ["//"],
   "tasks": {
     "dev": {
+      "dependsOn": ["ios:build", "android:build"],
       "persistent": true,
       "interactive": true
+    },
+    "ios:build": {
+      "dependsOn": ["prebuild"],
+      "outputs": ["ios/build/**"]
+    },
+    "android:build": {
+      "dependsOn": ["prebuild"],
+      "outputs": ["android/app/build/**"]
+    },
+    "prebuild": {
+      "dependsOn": ["prebuild:bootsplash"],
+      "inputs": ["./package.json", "./app.config.ts", "./assets/"],
+      "outputs": [
+        "android/**",
+        "!android/app/build/**",
+        "ios/**",
+        "!ios/build/**"
+      ]
+    },
+    "prebuild:bootsplash": {
+      "inputs": ["./app-logo.svg"],
+      "outputs": ["./assets/bootsplash/**"]
     }
   }
 }

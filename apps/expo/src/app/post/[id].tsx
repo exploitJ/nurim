@@ -12,7 +12,7 @@ export default function Post() {
   if (!data) return null;
 
   return (
-    <SafeAreaView className="bg-background">
+    <SafeAreaView className="flex-1 bg-background">
       <Stack.Screen options={{ title: data.title }} />
       <View className="h-full w-full p-4">
         <Text className="py-2 text-3xl font-bold text-primary">

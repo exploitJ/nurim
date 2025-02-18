@@ -2,9 +2,9 @@ import type { ConfigContext, ExpoConfig } from "expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: "expo",
-  slug: "expo",
-  scheme: "expo",
+  name: "Nurim",
+  slug: "nurim",
+  scheme: "nurim",
   version: "0.1.0",
   orientation: "portrait",
   icon: "./assets/icon-light.png",
@@ -13,9 +13,15 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     fallbackToCacheTimeout: 0,
   },
   assetBundlePatterns: ["**/*"],
+  newArchEnabled: true,
   ios: {
-    bundleIdentifier: "your.bundle.identifier",
+    bundleIdentifier: "io.pebbles.nurim",
     supportsTablet: true,
+    infoPlist: {
+      CFBundleAllowMixedLocalizations: true,
+      CFBundleLocalizations: ["en", "ko", "tr"],
+      CFBundleDevelopmentRegion: "en",
+    },
     icon: {
       light: "./assets/icon-light.png",
       dark: "./assets/icon-dark.png",
@@ -23,7 +29,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
   },
   android: {
-    package: "your.bundle.identifier",
+    package: "io.pebbles.nurim",
     adaptiveIcon: {
       foregroundImage: "./assets/icon-light.png",
       backgroundColor: "#1F104A",
@@ -40,16 +46,36 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   plugins: [
     "expo-router",
+    "expo-localization",
     "expo-secure-store",
     "expo-web-browser",
     [
-      "expo-splash-screen",
+      "expo-build-properties",
       {
-        backgroundColor: "#E4E4E7",
-        image: "./assets/icon-light.png",
-        dark: {
-          backgroundColor: "#18181B",
-          image: "./assets/icon-dark.png",
+        ios: {
+          ccacheEnabled: true,
+          privacyManifestAggregationEnabled: true,
+        },
+        android: {
+          enableProguardInReleaseBuilds: true,
+          enableShrinkResourcesInReleaseBuilds: true,
+          minSdkVersion: 26,
+        },
+      },
+    ],
+    [
+      "react-native-bootsplash",
+      {
+        assetsDir: "assets/bootsplash",
+        android: { parentTheme: "EdgeToEdge", darkContentBarsStyle: undefined },
+      },
+    ],
+    [
+      "react-native-edge-to-edge",
+      {
+        android: {
+          parentTheme: "Default",
+          enforceNavigationBarContrast: false,
         },
       },
     ],

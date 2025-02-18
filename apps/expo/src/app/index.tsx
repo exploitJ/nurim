@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Button, Pressable, Text, TextInput, View } from "react-native";
+import {
+  Button,
+  Dimensions,
+  Pressable,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import { MMKV } from "react-native-mmkv";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Stack } from "expo-router";
 import { FlashList } from "@shopify/flash-list";
@@ -8,6 +16,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type { RouterOutputs } from "~/utils/api";
 import { trpc } from "~/utils/api";
 import { useSignIn, useSignOut, useUser } from "~/utils/auth";
+
+export const storage = new MMKV();
 
 function PostCard(props: {
   post: RouterOutputs["post"]["all"][number];
@@ -130,25 +140,27 @@ export default function Index() {
   );
 
   return (
-    <SafeAreaView className="bg-background">
-      {/* Changes page title visible on the header */}
+    <SafeAreaView className="flex-1 bg-background">
       <Stack.Screen options={{ title: "Home Page" }} />
-      <View className="h-full w-full bg-background p-4">
-        <Text className="pb-2 text-center text-5xl font-bold text-foreground">
-          Create <Text className="text-primary">T3</Text> Turbo
+
+      <Text className="pb-2 text-center text-5xl font-bold text-foreground">
+        I <Text className="text-rose-300">love</Text> you
+      </Text>
+      <MobileAuth />
+      <View className="py-2">
+        <Text className="font-semibold italic text-primary">
+          Press on a post
         </Text>
+      </View>
 
-        <MobileAuth />
-
-        <View className="py-2">
-          <Text className="font-semibold italic text-primary">
-            Press on a post
-          </Text>
-        </View>
-
+      <View className="flex-grow flex-row bg-white p-4">
         <FlashList
           data={postQuery.data}
           estimatedItemSize={20}
+          estimatedListSize={{
+            height: 120,
+            width: Dimensions.get("screen").width,
+          }}
           ItemSeparatorComponent={() => <View className="h-2" />}
           renderItem={(p) => (
             <PostCard
@@ -157,9 +169,8 @@ export default function Index() {
             />
           )}
         />
-
-        <CreatePost />
       </View>
+      <CreatePost />
     </SafeAreaView>
   );
 }
