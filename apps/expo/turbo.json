@@ -16,7 +16,7 @@
       "outputs": ["android/app/build/**"]
     },
     "prebuild": {
-      "dependsOn": ["prebuild:bootsplash"],
+      "dependsOn": [],
       "inputs": ["./package.json", "./app.config.ts", "./assets/"],
       "outputs": [
         "android/**",
@@ -24,10 +24,6 @@
         "ios/**",
         "!ios/build/**"
       ]
-    },
-    "prebuild:bootsplash": {
-      "inputs": ["./app-logo.svg"],
-      "outputs": ["./assets/bootsplash/**"]
     }
   }
 }

@@ -50,6 +50,17 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     "expo-secure-store",
     "expo-web-browser",
     [
+      "expo-splash-screen",
+      {
+        backgroundColor: "#E4E4E7",
+        image: "./assets/icon-light.png",
+        dark: {
+          backgroundColor: "#18181B",
+          image: "./assets/icon-dark.png",
+        },
+      },
+    ],
+    [
       "expo-build-properties",
       {
         ios: {
@@ -61,13 +72,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
           enableShrinkResourcesInReleaseBuilds: true,
           minSdkVersion: 26,
         },
-      },
-    ],
-    [
-      "react-native-bootsplash",
-      {
-        assetsDir: "assets/bootsplash",
-        android: { parentTheme: "EdgeToEdge", darkContentBarsStyle: undefined },
       },
     ],
     [
