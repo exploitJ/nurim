@@ -73,7 +73,15 @@
   },
   "expo": {
     "install": {
-      "exclude": []
+      "exclude": [
+        "@react-native-picker/picker@2.11.0",
+        "@react-native-segmented-control/segmented-control@2.5.7",
+        "@shopify/flash-list@1.7.6",
+        "@shopify/react-native-skia@2.0.0-next.1",
+        "react-native@0.79.0-rc.3",
+        "react-native-safe-area-context@5.3.0",
+        "react-native-screens@4.10.0-beta.3"
+      ]
     },
     "autolinking": {
       "exclude": [
