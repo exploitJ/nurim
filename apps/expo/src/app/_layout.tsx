@@ -1,5 +1,5 @@
+import { SystemBars } from "react-native-edge-to-edge";
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "nativewind";
 
 import { queryClient } from "~/utils/api";
@@ -28,7 +28,7 @@ export default function RootLayout() {
           },
         }}
       />
-      <StatusBar />
+      <SystemBars style={{ navigationBar: "auto", statusBar: "auto" }} />
     </QueryClientProvider>
   );
 }

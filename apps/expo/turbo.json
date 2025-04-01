@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "dev": {
-      "dependsOn": ["ios:build", "android:build"],
+      "dependsOn": ["android:build"],
       "persistent": true,
       "interactive": true
     },

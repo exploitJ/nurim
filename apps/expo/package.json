@@ -19,7 +19,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@expo/metro-config": "0.20.0-canary-20250320-7a205d3",
+    "@expo/metro-config": "0.20.0-canary-20250331-817737a",
     "@gorhom/bottom-sheet": "^5.1.1",
     "@react-native-picker/picker": "2.11.0",
     "@react-native-segmented-control/segmented-control": "2.5.7",
@@ -38,7 +38,6 @@
     "expo-router": "5.0.0-canary-20250331-817737a",
     "expo-secure-store": "14.0.2-canary-20250331-817737a",
     "expo-splash-screen": "0.29.23-canary-20250331-817737a",
-    "expo-status-bar": "2.0.2-canary-20250331-817737a",
     "expo-system-ui": "5.0.0-canary-20250331-817737a",
     "expo-web-browser": "14.1.0-canary-20250331-817737a",
     "nativewind": "~4.1.23",

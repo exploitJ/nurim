@@ -116,8 +116,8 @@ importers:
   apps/expo:
     dependencies:
       '@expo/metro-config':
-        specifier: 0.20.0-canary-20250320-7a205d3
-        version: 0.20.0-canary-20250320-7a205d3
+        specifier: 0.20.0-canary-20250331-817737a
+        version: 0.20.0-canary-20250331-817737a
       '@gorhom/bottom-sheet':
         specifier: ^5.1.1
         version: 5.1.2(@types/react@19.0.12)(react-native-gesture-handler@2.24.0(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0))(react-native-reanimated@3.17.1(@babel/core@7.26.10)(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0))(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0)
@@ -172,9 +172,6 @@ importers:
       expo-splash-screen:
         specifier: 0.29.23-canary-20250331-817737a
         version: 0.29.23-canary-20250331-817737a(expo@53.0.0-canary-20250331-817737a(@babel/core@7.26.10)(@expo/metro-runtime@5.0.0-canary-20250331-817737a(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0)))(bufferutil@4.0.8)(graphql@15.8.0)(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0))
-      expo-status-bar:
-        specifier: 2.0.2-canary-20250331-817737a
-        version: 2.0.2-canary-20250331-817737a(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0)
       expo-system-ui:
         specifier: 5.0.0-canary-20250331-817737a
         version: 5.0.0-canary-20250331-817737a(expo@53.0.0-canary-20250331-817737a(@babel/core@7.26.10)(@expo/metro-runtime@5.0.0-canary-20250331-817737a(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0)))(bufferutil@4.0.8)(graphql@15.8.0)(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0))(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))
@@ -752,12 +749,6 @@ packages:
     resolution: {integrity: sha512-IXuyn5EkouFJscIDuFF5EsiSolseme1s0CZB+QxVugqJLYmKdxI1VfIBOst0SUu4rnk2Z7kqTwmoO1lp3HIfnA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-create-class-features-plugin@7.26.9':
-    resolution: {integrity: sha512-ubbUqCofvxPRurw5L8WTsCLSkQiVpov4Qx0WMA+jUN+nXBK8ADPlJO1grkFw5CWKC5+sZSOfuGMdX1aI1iT9Sg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-
   '@babel/helper-create-class-features-plugin@7.27.0':
     resolution: {integrity: sha512-vSGCvMecvFCd/BdpGlhpXYNhhC4ccxyvQWpbGL4CWbvfEoLFWUZuSuf7s9Aw70flgQF+6vptvgK2IfOnKlRmBg==}
     engines: {node: '>=6.9.0'}
@@ -1047,12 +1038,6 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-block-scoping@7.25.9':
-    resolution: {integrity: sha512-1F05O7AYjymAtqbsFETboN1NvBdcnzMerO+zlMyJBEz6WkMdejvGWw9p05iTSjC85RLlBseHHQpYaM4gzJkBGg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
   '@babel/plugin-transform-block-scoping@7.27.0':
     resolution: {integrity: sha512-u1jGphZ8uDI2Pj/HJj6YQ6XQLZCNjOlprjxB5SVz6rq2T6SwAR+CdrWK0CP7F+9rDVMXdB0+r6Am5G5aobOjAQ==}
     engines: {node: '>=6.9.0'}
@@ -1299,12 +1284,6 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-regenerator@7.25.9':
-    resolution: {integrity: sha512-vwDcDNsgMPDGP0nMqzahDWE5/MLcX8sv96+wfX7as7LoF/kr97Bo/7fI00lXY4wUXYfVmwIIyG80fGZ1uvt2qg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
   '@babel/plugin-transform-regenerator@7.27.0':
     resolution: {integrity: sha512-LX/vCajUJQDqE7Aum/ELUMZAY19+cDpghxrnyt5I1tV6X5PyC86AOoWXWFYFeIvauyeSA6/ktn4tQVn/3ZifsA==}
     engines: {node: '>=6.9.0'}
@@ -1359,12 +1338,6 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-typescript@7.26.7':
-    resolution: {integrity: sha512-5cJurntg+AT+cgelGP9Bt788DKiAw9gIMSMU2NJrLAilnj0m8WZWUNZPSLOmadYsujHutpgElO+50foX+ib/Wg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
   '@babel/plugin-transform-typescript@7.27.0':
     resolution: {integrity: sha512-fRGGjO2UEGPjvEcyAZXRXAS8AfdaQoq7HnxAbJoAoW10B9xOKesmmndJv+Sym2a+9FHWZ9KbyyLCe9s0Sn5jtg==}
     engines: {node: '>=6.9.0'}
@@ -1408,12 +1381,6 @@ packages:
 
   '@babel/preset-react@7.26.3':
     resolution: {integrity: sha512-Nl03d6T9ky516DGK2YMxrTqvnpUW63TnJMOMonj+Zae0JiPC5BC9xPMSL6L8fiSpA5vP88qfygavVQvnLp+6Cw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/preset-typescript@7.26.0':
-    resolution: {integrity: sha512-NMk1IGZ5I/oHhoXEElcm+xUnL/szL6xflkFZmoEU9xj1qSJXpiS7rsspYo92B4DRCDvZn2erT5LdsCeXAKNCkg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1942,29 +1909,17 @@ packages:
   '@expo/code-signing-certificates@0.0.5':
     resolution: {integrity: sha512-BNhXkY1bblxKZpltzAx98G2Egj9g1Q+JRcvR7E99DOj862FTCX+ZPsAUtPTr7aHxwtrL7+fL3r0JSmM9kBm+Bw==}
 
-  '@expo/config-plugins@9.1.0-canary-20250320-7a205d3':
-    resolution: {integrity: sha512-Pab+qARfK/4m6yZdPVKhRvrvNbcKlJ2me7PeM9f8AB3er1ZpydjBWi6qVpqskMy//l+geqwJidFHLmUS85hDSQ==}
-
   '@expo/config-plugins@9.1.0-canary-20250331-817737a':
     resolution: {integrity: sha512-+y2cWVfXkzjA/OLRGnMam5kLtpiTVxFd+BdAk92wOId4iEmnk3BxXMYu5+agueg/bOogWJiki9dyBECfRfbnaA==}
 
-  '@expo/config-types@53.0.0-canary-20250320-7a205d3':
-    resolution: {integrity: sha512-BoFaIHkazdy1N4ZaJ49nPm+/mPNF81ikFAgXkuvTNvx2PT7afc6oT8Q8eEuhX8TkhDTASmViUKrreFqKKlxcSw==}
-
   '@expo/config-types@53.0.0-canary-20250331-817737a':
     resolution: {integrity: sha512-rCIDoyg7YdHb9pyJ2Hbzo50e2qjNssTLqqC0E10G/aNWuGPpzcRZBuoPklnokOxT/uvcDIFoaoqNCMNjo3uMWA==}
-
-  '@expo/config@11.0.0-canary-20250320-7a205d3':
-    resolution: {integrity: sha512-Zbadc91+9vxBp1jrMKqxx+PFx6lOlrqkzMnHbU2dpyja/JMrg7L9i9NAxrH7Oxv9vjoAcH3LWpjqm2MOV7fQag==}
 
   '@expo/config@11.0.0-canary-20250331-817737a':
     resolution: {integrity: sha512-bBpc2AjUGSq19q7GGOcb3N/IxNHJoUEtsxY+xX+Jv0++lwzP8qKwQA3cQ0g3/LLL9ZtUMxOgyxUzt02/LKp9Pw==}
 
   '@expo/devcert@1.1.4':
     resolution: {integrity: sha512-fqBODr8c72+gBSX5Ty3SIzaY4bXainlpab78+vEYEKL3fXmsOswMLf0+KE36mUEAa36BYabX7K3EiXOXX5OPMw==}
-
-  '@expo/env@1.0.1-canary-20250320-7a205d3':
-    resolution: {integrity: sha512-4asORGqy5V6sJFENd8buzgPV5h+UrnZNXsFWVRtmNewUcjsMlVVTfBwXyQlX5mz4SG+l5bMU3elpcouG3kS0BQ==}
 
   '@expo/env@1.0.1-canary-20250331-817737a':
     resolution: {integrity: sha512-bJYw5pRPbdcB99WLHi4XCRtWSbIRTpfjXNmLz8OrUUGuaGoT/DK71ruspeqXB8ajEmyNYrOerQPQlydsk2QY6Q==}
@@ -1976,14 +1931,8 @@ packages:
   '@expo/image-utils@0.6.6-canary-20250331-817737a':
     resolution: {integrity: sha512-vvTXVIpZ1/PsYm12mj/f/rJHfE4w6B90m9EuUZJ1yk78NV3LFafaHk8asRxBemcoCl9efjvTJyXtDJWuijVWzA==}
 
-  '@expo/json-file@9.0.3-canary-20250320-7a205d3':
-    resolution: {integrity: sha512-1pLjGs6jcVrx5I2o8qE36pAgUnSn3rzCB4zyb5SF/sgHsDpQGg/eyvwUUF7+cuEkLGiJ8atjyi+bV1P4D/AfIQ==}
-
   '@expo/json-file@9.0.3-canary-20250331-817737a':
     resolution: {integrity: sha512-5OlFCmD7qa7ZidPazVnbWn1EPqGRrj3MINawsjOdPWsHLt6io2rAbIOofM/QwoFgt5+k5uKTS/vS8tXhWYpITQ==}
-
-  '@expo/metro-config@0.20.0-canary-20250320-7a205d3':
-    resolution: {integrity: sha512-kK7plSId/CHnh/J9MM2MIBz8yQQ7VvL0Zd3yCkTqZeJw7m8dSgoAUJEXfp90J/lb3q6QZUGrOnxtHLjHSbbPKA==}
 
   '@expo/metro-config@0.20.0-canary-20250331-817737a':
     resolution: {integrity: sha512-Kd4GusQYMA6ugGRnj9Kjo1sNIsFwZk/YfqgVjE7j0s9zEbi0K+MofJcnO0ib9x4+7UwSXbPkm+eoVuJtnEr8vw==}
@@ -1999,9 +1948,6 @@ packages:
 
   '@expo/package-manager@1.6.2-canary-20250331-817737a':
     resolution: {integrity: sha512-Ibj3BQFRUbSl7gIc3F3AskJgFSobumglpIZa0VvPdX83iZMM3ICnjAnh7PxQR+IaNStcO+Xp1SvMeuPSha3KLA==}
-
-  '@expo/plist@0.2.3-canary-20250320-7a205d3':
-    resolution: {integrity: sha512-NecQOuSUI2+YgKZJf9R1JXTJGsbCxYtG2k0ZPwlM+SFfoAnafZw7zRcSSRoO5/kbky9CpedV+4yAl383aVJvgA==}
 
   '@expo/plist@0.2.3-canary-20250331-817737a':
     resolution: {integrity: sha512-oW3YHY8xziMpZ+TuZywWNVPnricpYnMgdh6RIF5+Np2uxzPEv6RWNAunAFaGbFmZARc0Ww4M9DJB41L74DQQOw==}
@@ -5060,12 +5006,6 @@ packages:
     resolution: {integrity: sha512-xO4AHqo9U9neQh6t7rauCfbJs3I92cjp8Dg2ngCfzrM+eiiKZhkRNbvxakG6IYyKR+QKZJ2HjCkOKBErfr+kVQ==}
     peerDependencies:
       expo: 53.0.0-canary-20250331-817737a
-
-  expo-status-bar@2.0.2-canary-20250331-817737a:
-    resolution: {integrity: sha512-SqNc0wmZSx8B1SEGIGpaBt2udoE0FhYgZSoHy2jn7KarnT/l2/0K0uhhy/lUQyNPJ8IgOXvijp41K+66VPa6YA==}
-    peerDependencies:
-      react: '*'
-      react-native: '*'
 
   expo-system-ui@5.0.0-canary-20250331-817737a:
     resolution: {integrity: sha512-ymh4D1L5QwMASuhaUpR7W6eGe67tquRuyNQO9Jhz4ftTzw6uYca0WRcfM+tIy+Cf95wqyU7ckEhp67x+NT77MQ==}
@@ -8294,18 +8234,6 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.18.0:
-    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
   ws@8.18.1:
     resolution: {integrity: sha512-RKW2aJZMXeMxVpnZ6bck+RswznaxmzdULiBr6KY7XkTnW8uvt0iT9H5DkHUChXrc+uurzwa0rVI16n/Xzjdz1w==}
     engines: {node: '>=10.0.0'}
@@ -8476,19 +8404,6 @@ snapshots:
       lru-cache: 5.1.1
       semver: 6.3.1
 
-  '@babel/helper-create-class-features-plugin@7.26.9(@babel/core@7.26.10)':
-    dependencies:
-      '@babel/core': 7.26.10
-      '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-member-expression-to-functions': 7.25.9
-      '@babel/helper-optimise-call-expression': 7.25.9
-      '@babel/helper-replace-supers': 7.26.5(@babel/core@7.26.10)
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
-      '@babel/traverse': 7.27.0
-      semver: 6.3.1
-    transitivePeerDependencies:
-      - supports-color
-
   '@babel/helper-create-class-features-plugin@7.27.0(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
@@ -8656,7 +8571,7 @@ snapshots:
   '@babel/plugin-proposal-private-methods@7.18.6(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.10)
+      '@babel/helper-create-class-features-plugin': 7.27.0(@babel/core@7.26.10)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
@@ -8809,11 +8724,6 @@ snapshots:
       '@babel/core': 7.26.10
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-block-scoping@7.25.9(@babel/core@7.26.10)':
-    dependencies:
-      '@babel/core': 7.26.10
-      '@babel/helper-plugin-utils': 7.26.5
-
   '@babel/plugin-transform-block-scoping@7.27.0(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
@@ -8822,7 +8732,7 @@ snapshots:
   '@babel/plugin-transform-class-properties@7.25.9(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.10)
+      '@babel/helper-create-class-features-plugin': 7.27.0(@babel/core@7.26.10)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
@@ -8830,7 +8740,7 @@ snapshots:
   '@babel/plugin-transform-class-static-block@7.26.0(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.10)
+      '@babel/helper-create-class-features-plugin': 7.27.0(@babel/core@7.26.10)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
@@ -9024,7 +8934,7 @@ snapshots:
   '@babel/plugin-transform-private-methods@7.25.9(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.10)
+      '@babel/helper-create-class-features-plugin': 7.27.0(@babel/core@7.26.10)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
@@ -9033,7 +8943,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.26.10
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.10)
+      '@babel/helper-create-class-features-plugin': 7.27.0(@babel/core@7.26.10)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
@@ -9081,12 +8991,6 @@ snapshots:
       '@babel/core': 7.26.10
       '@babel/helper-annotate-as-pure': 7.25.9
       '@babel/helper-plugin-utils': 7.26.5
-
-  '@babel/plugin-transform-regenerator@7.25.9(@babel/core@7.26.10)':
-    dependencies:
-      '@babel/core': 7.26.10
-      '@babel/helper-plugin-utils': 7.26.5
-      regenerator-transform: 0.15.2
 
   '@babel/plugin-transform-regenerator@7.27.0(@babel/core@7.26.10)':
     dependencies:
@@ -9145,17 +9049,6 @@ snapshots:
       '@babel/core': 7.26.10
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-typescript@7.26.7(@babel/core@7.26.10)':
-    dependencies:
-      '@babel/core': 7.26.10
-      '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.10)
-      '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
-      '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.10)
-    transitivePeerDependencies:
-      - supports-color
-
   '@babel/plugin-transform-typescript@7.27.0(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
@@ -9210,7 +9103,7 @@ snapshots:
       '@babel/plugin-transform-async-generator-functions': 7.26.8(@babel/core@7.26.10)
       '@babel/plugin-transform-async-to-generator': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-block-scoped-functions': 7.26.5(@babel/core@7.26.10)
-      '@babel/plugin-transform-block-scoping': 7.25.9(@babel/core@7.26.10)
+      '@babel/plugin-transform-block-scoping': 7.27.0(@babel/core@7.26.10)
       '@babel/plugin-transform-class-properties': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-class-static-block': 7.26.0(@babel/core@7.26.10)
       '@babel/plugin-transform-classes': 7.25.9(@babel/core@7.26.10)
@@ -9244,7 +9137,7 @@ snapshots:
       '@babel/plugin-transform-private-methods': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-private-property-in-object': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-property-literals': 7.25.9(@babel/core@7.26.10)
-      '@babel/plugin-transform-regenerator': 7.25.9(@babel/core@7.26.10)
+      '@babel/plugin-transform-regenerator': 7.27.0(@babel/core@7.26.10)
       '@babel/plugin-transform-regexp-modifiers': 7.26.0(@babel/core@7.26.10)
       '@babel/plugin-transform-reserved-words': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-shorthand-properties': 7.25.9(@babel/core@7.26.10)
@@ -9281,17 +9174,6 @@ snapshots:
       '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-react-jsx-development': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-react-pure-annotations': 7.25.9(@babel/core@7.26.10)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@babel/preset-typescript@7.26.0(@babel/core@7.26.10)':
-    dependencies:
-      '@babel/core': 7.26.10
-      '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-validator-option': 7.25.9
-      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.10)
-      '@babel/plugin-transform-modules-commonjs': 7.26.3(@babel/core@7.26.10)
-      '@babel/plugin-transform-typescript': 7.26.7(@babel/core@7.26.10)
     transitivePeerDependencies:
       - supports-color
 
@@ -9691,7 +9573,7 @@ snapshots:
       terminal-link: 2.1.1
       undici: 6.21.2
       wrap-ansi: 7.0.0
-      ws: 8.18.1(bufferutil@4.0.8)
+      ws: 8.18.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
     transitivePeerDependencies:
       - bufferutil
       - graphql
@@ -9702,25 +9584,6 @@ snapshots:
     dependencies:
       node-forge: 1.3.1
       nullthrows: 1.1.1
-
-  '@expo/config-plugins@9.1.0-canary-20250320-7a205d3':
-    dependencies:
-      '@expo/config-types': 53.0.0-canary-20250320-7a205d3
-      '@expo/json-file': 9.0.3-canary-20250320-7a205d3
-      '@expo/plist': 0.2.3-canary-20250320-7a205d3
-      '@expo/sdk-runtime-versions': 1.0.0
-      chalk: 4.1.2
-      debug: 4.4.0(supports-color@9.4.0)
-      getenv: 1.0.0
-      glob: 10.4.5
-      resolve-from: 5.0.0
-      semver: 7.7.1
-      slash: 3.0.0
-      slugify: 1.6.6
-      xcode: 3.0.1
-      xml2js: 0.6.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@expo/config-plugins@9.1.0-canary-20250331-817737a':
     dependencies:
@@ -9741,27 +9604,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@expo/config-types@53.0.0-canary-20250320-7a205d3': {}
-
   '@expo/config-types@53.0.0-canary-20250331-817737a': {}
-
-  '@expo/config@11.0.0-canary-20250320-7a205d3':
-    dependencies:
-      '@babel/code-frame': 7.10.4
-      '@expo/config-plugins': 9.1.0-canary-20250320-7a205d3
-      '@expo/config-types': 53.0.0-canary-20250320-7a205d3
-      '@expo/json-file': 9.0.3-canary-20250320-7a205d3
-      deepmerge: 4.3.1
-      getenv: 1.0.0
-      glob: 10.4.5
-      require-from-string: 2.0.2
-      resolve-from: 5.0.0
-      resolve-workspace-root: 2.0.0
-      semver: 7.7.1
-      slugify: 1.6.6
-      sucrase: 3.35.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@expo/config@11.0.0-canary-20250331-817737a':
     dependencies:
@@ -9795,16 +9638,6 @@ snapshots:
       sudo-prompt: 8.2.5
       tmp: 0.0.33
       tslib: 2.8.1
-    transitivePeerDependencies:
-      - supports-color
-
-  '@expo/env@1.0.1-canary-20250320-7a205d3':
-    dependencies:
-      chalk: 4.1.2
-      debug: 4.4.0(supports-color@9.4.0)
-      dotenv: 16.4.7
-      dotenv-expand: 11.0.7
-      getenv: 1.0.0
     transitivePeerDependencies:
       - supports-color
 
@@ -9845,37 +9678,10 @@ snapshots:
       temp-dir: 2.0.0
       unique-string: 2.0.0
 
-  '@expo/json-file@9.0.3-canary-20250320-7a205d3':
-    dependencies:
-      '@babel/code-frame': 7.10.4
-      json5: 2.2.3
-
   '@expo/json-file@9.0.3-canary-20250331-817737a':
     dependencies:
       '@babel/code-frame': 7.10.4
       json5: 2.2.3
-
-  '@expo/metro-config@0.20.0-canary-20250320-7a205d3':
-    dependencies:
-      '@babel/core': 7.26.10
-      '@babel/generator': 7.27.0
-      '@babel/parser': 7.27.0
-      '@babel/types': 7.27.0
-      '@expo/config': 11.0.0-canary-20250320-7a205d3
-      '@expo/env': 1.0.1-canary-20250320-7a205d3
-      '@expo/json-file': 9.0.3-canary-20250320-7a205d3
-      '@expo/spawn-async': 1.7.2
-      chalk: 4.1.2
-      debug: 4.4.0(supports-color@9.4.0)
-      getenv: 1.0.0
-      glob: 10.4.5
-      jsc-safe-url: 0.2.4
-      lightningcss: 1.27.0
-      minimatch: 9.0.5
-      postcss: 8.4.49
-      resolve-from: 5.0.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@expo/metro-config@0.20.0-canary-20250331-817737a':
     dependencies:
@@ -9916,12 +9722,6 @@ snapshots:
       npm-package-arg: 11.0.3
       ora: 3.4.0
       resolve-workspace-root: 2.0.0
-
-  '@expo/plist@0.2.3-canary-20250320-7a205d3':
-    dependencies:
-      '@xmldom/xmldom': 0.8.10
-      base64-js: 1.5.1
-      xmlbuilder: 15.1.1
 
   '@expo/plist@0.2.3-canary-20250331-817737a':
     dependencies:
@@ -11776,7 +11576,7 @@ snapshots:
     dependencies:
       '@neondatabase/serverless': 0.9.5
       bufferutil: 4.0.8
-      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      ws: 8.18.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
     transitivePeerDependencies:
       - utf-8-validate
 
@@ -13392,12 +13192,6 @@ snapshots:
       expo: 53.0.0-canary-20250331-817737a(@babel/core@7.26.10)(@expo/metro-runtime@5.0.0-canary-20250331-817737a(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0)))(bufferutil@4.0.8)(graphql@15.8.0)(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0)
     transitivePeerDependencies:
       - supports-color
-
-  expo-status-bar@2.0.2-canary-20250331-817737a(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0):
-    dependencies:
-      react: 19.0.0
-      react-native: 0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0)
-      react-native-is-edge-to-edge: 1.1.6(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0)
 
   expo-system-ui@5.0.0-canary-20250331-817737a(expo@53.0.0-canary-20250331-817737a(@babel/core@7.26.10)(@expo/metro-runtime@5.0.0-canary-20250331-817737a(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0)))(bufferutil@4.0.8)(graphql@15.8.0)(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0))(react@19.0.0))(react-native@0.79.0-rc.4(@babel/core@7.26.10)(@types/react@19.0.12)(bufferutil@4.0.8)(react@19.0.0)):
     dependencies:
@@ -15703,7 +15497,7 @@ snapshots:
       '@babel/plugin-transform-shorthand-properties': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-template-literals': 7.26.8(@babel/core@7.26.10)
       '@babel/plugin-transform-unicode-regex': 7.25.9(@babel/core@7.26.10)
-      '@babel/preset-typescript': 7.26.0(@babel/core@7.26.10)
+      '@babel/preset-typescript': 7.27.0(@babel/core@7.26.10)
       convert-source-map: 2.0.0
       invariant: 2.2.4
       react: 19.0.0
@@ -17037,14 +16831,10 @@ snapshots:
     optionalDependencies:
       bufferutil: 4.0.8
 
-  ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4):
+  ws@8.18.1(bufferutil@4.0.8)(utf-8-validate@6.0.4):
     optionalDependencies:
       bufferutil: 4.0.8
       utf-8-validate: 6.0.4
-
-  ws@8.18.1(bufferutil@4.0.8):
-    optionalDependencies:
-      bufferutil: 4.0.8
 
   xcode@3.0.1:
     dependencies:
