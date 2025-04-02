@@ -140,7 +140,7 @@ export default function Index() {
   );
 
   return (
-    <SafeAreaView className="flex-1 bg-background">
+    <>
       <Stack.Screen options={{ title: "Home Page" }} />
 
       <Text className="pb-2 text-center text-5xl font-bold text-foreground">
@@ -171,6 +171,6 @@ export default function Index() {
         />
       </View>
       <CreatePost />
-    </SafeAreaView>
+    </>
   );
 }
