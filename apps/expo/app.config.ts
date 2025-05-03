@@ -12,6 +12,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   updates: {
     fallbackToCacheTimeout: 0,
   },
+  newArchEnabled: true,
   assetBundlePatterns: ["**/*"],
   newArchEnabled: true,
   ios: {
@@ -25,7 +26,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     icon: {
       light: "./assets/icon-light.png",
       dark: "./assets/icon-dark.png",
-      // tinted: "",
     },
   },
   android: {
@@ -34,6 +34,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: "./assets/icon-light.png",
       backgroundColor: "#1F104A",
     },
+    edgeToEdgeEnabled: true,
   },
   // extra: {
   //   eas: {
