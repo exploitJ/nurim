@@ -1,0 +1,21 @@
+.env*
+
+*.local.md
+CLAUDE.md
+**/docs/**
+**/.claude/**
+.*.swp
+
+pnpm-lock.yaml
+LICENSE
+
+# Configuration files without parsers
+.gitattributes
+.gitignore
+.ignore
+.prettierignore
+.prettierignore-append
+.tool-versions
+.nvmrc
+.cursorignore
+.codexignore

@@ -1,10 +1,15 @@
-/** @typedef {import("prettier").Config} PrettierConfig */
-/** @typedef {import("prettier-plugin-tailwindcss").PluginOptions} TailwindConfig */
-/** @typedef {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig */
+import tsMeta from "typescript/package.json" with { type: "json" };
 
-/** @type { PrettierConfig | SortImportsConfig | TailwindConfig } */
+import "@prettier/plugin-oxc";
+import "@ianvs/prettier-plugin-sort-imports";
+import "prettier-plugin-tailwindcss";
+
+import path from "node:path";
+
 const config = {
+  endOfLine: "lf",
   plugins: [
+    "@prettier/plugin-oxc",
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
   ],
@@ -36,7 +41,20 @@ const config = {
     {
       files: "*.ts.hbs",
       options: {
+        parser: "babel-ts",
+      },
+    },
+    {
+      files: "*.js.hbs",
+      options: {
         parser: "babel",
+      },
+    },
+    {
+      files: "pnpm-workspace.yaml",
+      options: {
+        // pnpm updates with single quotes
+        singleQuote: true,
       },
     },
   ],
