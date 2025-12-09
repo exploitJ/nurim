@@ -1,8 +1,8 @@
 import * as path from "node:path";
 import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
+import turboPlugin from "eslint-config-turbo";
 import importPlugin from "eslint-plugin-import";
-import turboPlugin from "eslint-plugin-turbo";
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
