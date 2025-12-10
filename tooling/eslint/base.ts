@@ -1,9 +1,11 @@
-import * as path from "node:path";
+import path from "node:path";
+
 import { includeIgnoreFile } from "@eslint/compat";
-import eslint from "@eslint/js";
-import turboPlugin from "eslint-config-turbo";
-import importPlugin from "eslint-plugin-import";
-import { defineConfig } from "eslint/config";
+import eslintjs from "@eslint/js";
+import prettierConfig from "eslint-config-prettier/flat";
+import turboConfig from "eslint-config-turbo/flat";
+import { importX } from "eslint-plugin-import-x";
+import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 /**
@@ -39,43 +41,14 @@ export const restrictEnvAccess = defineConfig(
 export const baseConfig = defineConfig(
   // Ignore files not tracked by VCS and any config files
   includeIgnoreFile(path.join(import.meta.dirname, "../../.gitignore")),
-  { ignores: ["**/*.config.*"] },
-  {
-    files: ["**/*.js", "**/*.ts", "**/*.tsx"],
-    plugins: {
-      import: importPlugin,
-      turbo: turboPlugin,
-    },
-    extends: [
-      eslint.configs.recommended,
-      ...tseslint.configs.recommended,
-      ...tseslint.configs.recommendedTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-    ],
-    rules: {
-      ...turboPlugin.configs.recommended.rules,
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
-      ],
-      "@typescript-eslint/consistent-type-imports": [
-        "warn",
-        { prefer: "type-imports", fixStyle: "separate-type-imports" },
-      ],
-      "@typescript-eslint/no-misused-promises": [
-        2,
-        { checksVoidReturn: { attributes: false } },
-      ],
-      "@typescript-eslint/no-unnecessary-condition": [
-        "error",
-        {
-          allowConstantLoopConditions: true,
-        },
-      ],
-      "@typescript-eslint/no-non-null-assertion": "error",
-      "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
-    },
-  },
+  // globalIgnores(["**/*.config.*"], "Ignore config files"),
+  eslintjs.configs.recommended,
+  tseslint.configs.recommendedTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
+  turboConfig,
+  //@ts-ignore
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   {
     linterOptions: { reportUnusedDisableDirectives: true },
     languageOptions: {
@@ -84,5 +57,36 @@ export const baseConfig = defineConfig(
         tsconfigRootDir: import.meta.dirname,
       },
     },
+    rules: {
+      "import-x/no-dynamic-require": "warn",
+      "@typescript-eslint/no-non-null-assertion": "error",
+      "@typescript-eslint/no-deprecated": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+      "@typescript-eslint/no-unnecessary-condition": [
+        "error",
+        {
+          allowConstantLoopConditions: true,
+        },
+      ],
+    },
   },
+  {
+    files: ["**/*.{ts,tsx,mts,cts}"],
+    rules: {
+      "import-x/named": "off",
+      "import-x/namespace": "off",
+      "import-x/default": "off",
+      "import-x/no-named-as-default-member": "off",
+      "import-x/no-unresolved": "off",
+      "no-undef": "off",
+    },
+  },
+  {
+    files: ["**/*.{js,jsx}", "**/*.config.ts"],
+    extends: [tseslint.configs.disableTypeChecked],
+  },
+  prettierConfig,
 );

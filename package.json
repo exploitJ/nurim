@@ -6,9 +6,9 @@
     "node": "^24",
     "pnpm": "^10"
   },
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.25.0",
   "scripts": {
-    "root:clean": "git clean -xdf node_modules",
+    "root:clean": "git clean -xdf .cache .turbo node_modules",
     "root:format": "prettier --check .github/ .vscode/ *.*",
     "build": "turbo run build",
     "build:desktop": "turbo run desktop#build:unpack",
@@ -38,7 +38,7 @@
     "@turbo/gen": "^2.6.3",
     "@types/node": "catalog:",
     "dotenv-cli": "^11.0.0",
-    "knip": "^5.72.0",
+    "knip": "^5.73.0",
     "prettier": "catalog:",
     "turbo": "^2.6.3",
     "typescript": "catalog:"

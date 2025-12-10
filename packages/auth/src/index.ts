@@ -11,8 +11,6 @@ export function initAuth<
 >(options: {
   baseUrl: string;
   productionUrl: string;
-  secret: string | undefined;
-
   discordClientId: string;
   discordClientSecret: string;
   extraPlugins?: TExtraPlugins;
@@ -22,7 +20,6 @@ export function initAuth<
       provider: "pg",
     }),
     baseURL: options.baseUrl,
-    secret: options.secret,
     plugins: [
       oAuthProxy({
         productionURL: options.productionUrl,

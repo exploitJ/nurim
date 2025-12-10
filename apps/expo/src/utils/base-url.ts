@@ -1,4 +1,4 @@
-import Constants from "expo-constants";
+import * as Constants from "expo-constants";
 
 /**
  * Extend this function when going to production by
@@ -13,7 +13,7 @@ export const getBaseUrl = () => {
    * **NOTE**: This is only for development. In production, you'll want to set the
    * baseUrl to your production API URL.
    */
-  const debuggerHost = Constants.expoConfig?.hostUri;
+  const debuggerHost = Constants.default.expoConfig?.hostUri;
   const localhost = debuggerHost?.split(":")[0];
 
   if (!localhost) {

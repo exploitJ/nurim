@@ -9,7 +9,7 @@ import {
   loggerLink,
 } from "@trpc/client";
 import { createTRPCContext } from "@trpc/tanstack-react-query";
-import SuperJSON from "superjson";
+import { SuperJSON } from "superjson";
 
 import type { AppRouter } from "@acme/api";
 

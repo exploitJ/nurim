@@ -1,12 +1,9 @@
-import tsMeta from "typescript/package.json" with { type: "json" };
-
-import "@prettier/plugin-oxc";
-import "@ianvs/prettier-plugin-sort-imports";
-import "prettier-plugin-tailwindcss";
-
 import path from "node:path";
 
-const config = {
+import { type Config } from "prettier";
+import tsMeta from "typescript/package.json" with { type: "json" };
+
+const config: Config = {
   endOfLine: "lf",
   plugins: [
     "@prettier/plugin-oxc",
@@ -15,6 +12,9 @@ const config = {
   ],
   tailwindFunctions: ["cn", "cva"],
   importOrder: [
+    "<TYPES>^(node:)",
+    "<BUILTIN_MODULES>",
+    "",
     "<TYPES>",
     "^(react/(.*)$)|^(react$)|^(react-native(.*)$)",
     "^(next/(.*)$)|^(next$)",
@@ -24,13 +24,13 @@ const config = {
     "<TYPES>^@acme",
     "^@acme/(.*)$",
     "",
-    "<TYPES>^[.|..|~]",
+    "<TYPES>^[#|~|.|..]",
+    "^#/",
     "^~/",
     "^[../]",
     "^[./]",
   ],
-  importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-  importOrderTypeScriptVersion: "5.0.0",
+  importOrderTypeScriptVersion: tsMeta.version,
   overrides: [
     {
       files: "*.json.hbs",
