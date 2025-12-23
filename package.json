@@ -6,7 +6,7 @@
     "node": "^24",
     "pnpm": "^10"
   },
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.26.0",
   "scripts": {
     "root:clean": "git clean -xdf .cache .turbo node_modules",
     "root:format": "prettier --check .github/ .vscode/ *.*",
@@ -35,12 +35,12 @@
   },
   "devDependencies": {
     "@acme/prettier-config": "workspace:*",
-    "@turbo/gen": "^2.6.3",
+    "@turbo/gen": "^2.7.1",
     "@types/node": "catalog:",
     "dotenv-cli": "^11.0.0",
-    "knip": "^5.73.0",
+    "knip": "^5.76.3",
     "prettier": "catalog:",
-    "turbo": "^2.6.3",
+    "turbo": "^2.7.1",
     "typescript": "catalog:"
   },
   "prettier": "@acme/prettier-config"
