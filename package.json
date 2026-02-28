@@ -6,7 +6,7 @@
     "node": "^24",
     "pnpm": "^10"
   },
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.28.0",
   "scripts": {
     "root:clean": "git clean -xdf .cache .turbo node_modules",
     "root:format": "prettier --check .github/ .vscode/ *.*",
@@ -20,9 +20,9 @@
     "dev": "turbo watch dev --continue",
     "dev:next": "turbo watch dev -F @acme/nextjs...",
     "ci:check": "turbo run format lint",
-    "preformat": "pnpx rimraf ./.prettierignore && pnpx prettierignore-monorepo@latest",
-    "format": "turbo run format root:format --continue -- --cache --cache-location .cache/prettiercache",
-    "format:fix": "pnpm format --write",
+    "preformat": "pnpx prettierignore-monorepo@latest",
+    "format": "turbo run format root:format --continue -- --check --cache --cache-location .cache/prettiercache --experimental-cli",
+    "format:fix": "turbo run format root:format --continue -- --write --cache --cache-location .cache/prettiercache --experimental-cli",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/eslintcache",
     "lint:ws": "pnpx sherif@latest",
@@ -35,12 +35,12 @@
   },
   "devDependencies": {
     "@acme/prettier-config": "workspace:*",
-    "@turbo/gen": "^2.7.1",
+    "@turbo/gen": "^2.8.12",
     "@types/node": "catalog:",
     "dotenv-cli": "^11.0.0",
-    "knip": "^5.76.3",
+    "knip": "^5.82.0",
     "prettier": "catalog:",
-    "turbo": "^2.7.1",
+    "turbo": "^2.8.12",
     "typescript": "catalog:"
   },
   "prettier": "@acme/prettier-config"

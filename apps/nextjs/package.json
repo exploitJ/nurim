@@ -24,12 +24,12 @@
     "@trpc/client": "catalog:",
     "@trpc/server": "catalog:",
     "@trpc/tanstack-react-query": "catalog:",
-    "better-auth": "catalog:",
-    "next": "^16.1.1",
+    "better-auth": "catalog:better-auth",
+    "next": "^16.1.6",
     "radashi": "^12.7.1",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
-    "superjson": "2.2.6",
+    "superjson": "^2.2.6",
     "zod": "catalog:"
   },
   "devDependencies": {
