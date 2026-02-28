@@ -155,12 +155,12 @@ export default function Index() {
         <LegendList
           data={postQuery.data ?? []}
           estimatedItemSize={20}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item: RouterOutputs["post"]["all"][number]) => item.id}
           ItemSeparatorComponent={() => <View className="h-2" />}
-          renderItem={(p) => (
+          renderItem={({ item }: { item: RouterOutputs["post"]["all"][number] }) => (
             <PostCard
-              post={p.item}
-              onDelete={() => deletePostMutation.mutate(p.item.id)}
+              post={item}
+              onDelete={() => deletePostMutation.mutate(item.id)}
             />
           )}
         />
