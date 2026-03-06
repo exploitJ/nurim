@@ -128,27 +128,26 @@ Since react-native-css requires explicit CSS element wrapping, create reusable c
 ### Main Components (`src/tw/index.tsx`)
 
 ```tsx
+import React from "react";
+import {
+  Pressable as RNPressable,
+  ScrollView as RNScrollView,
+  Text as RNText,
+  TextInput as RNTextInput,
+  TouchableHighlight as RNTouchableHighlight,
+  View as RNView,
+  StyleSheet,
+} from "react-native";
 import {
   useCssElement,
   useNativeVariable as useFunctionalVariable,
 } from "react-native-css";
-
-import { Link as RouterLink } from "expo-router";
 import Animated from "react-native-reanimated";
-import React from "react";
-import {
-  View as RNView,
-  Text as RNText,
-  Pressable as RNPressable,
-  ScrollView as RNScrollView,
-  TouchableHighlight as RNTouchableHighlight,
-  TextInput as RNTextInput,
-  StyleSheet,
-} from "react-native";
+import { Link as RouterLink } from "expo-router";
 
 // CSS-enabled Link
 export const Link = (
-  props: React.ComponentProps<typeof RouterLink> & { className?: string }
+  props: React.ComponentProps<typeof RouterLink> & { className?: string },
 ) => {
   return useCssElement(RouterLink, props, { className: "style" });
 };
@@ -176,7 +175,7 @@ View.displayName = "CSS(View)";
 
 // Text
 export const Text = (
-  props: React.ComponentProps<typeof RNText> & { className?: string }
+  props: React.ComponentProps<typeof RNText> & { className?: string },
 ) => {
   return useCssElement(RNText, props, { className: "style" });
 };
@@ -187,7 +186,7 @@ export const ScrollView = (
   props: React.ComponentProps<typeof RNScrollView> & {
     className?: string;
     contentContainerClassName?: string;
-  }
+  },
 ) => {
   return useCssElement(RNScrollView, props, {
     className: "style",
@@ -198,7 +197,7 @@ ScrollView.displayName = "CSS(ScrollView)";
 
 // Pressable
 export const Pressable = (
-  props: React.ComponentProps<typeof RNPressable> & { className?: string }
+  props: React.ComponentProps<typeof RNPressable> & { className?: string },
 ) => {
   return useCssElement(RNPressable, props, { className: "style" });
 };
@@ -206,7 +205,7 @@ Pressable.displayName = "CSS(Pressable)";
 
 // TextInput
 export const TextInput = (
-  props: React.ComponentProps<typeof RNTextInput> & { className?: string }
+  props: React.ComponentProps<typeof RNTextInput> & { className?: string },
 ) => {
   return useCssElement(RNTextInput, props, { className: "style" });
 };
@@ -218,7 +217,7 @@ export const AnimatedScrollView = (
     className?: string;
     contentClassName?: string;
     contentContainerClassName?: string;
-  }
+  },
 ) => {
   return useCssElement(Animated.ScrollView, props, {
     className: "style",
@@ -229,7 +228,7 @@ export const AnimatedScrollView = (
 
 // TouchableHighlight with underlayColor extraction
 function XXTouchableHighlight(
-  props: React.ComponentProps<typeof RNTouchableHighlight>
+  props: React.ComponentProps<typeof RNTouchableHighlight>,
 ) {
   const { underlayColor, ...style } = StyleSheet.flatten(props.style) || {};
   return (
@@ -242,7 +241,7 @@ function XXTouchableHighlight(
 }
 
 export const TouchableHighlight = (
-  props: React.ComponentProps<typeof RNTouchableHighlight>
+  props: React.ComponentProps<typeof RNTouchableHighlight>,
 ) => {
   return useCssElement(XXTouchableHighlight, props, { className: "style" });
 };
@@ -252,9 +251,9 @@ TouchableHighlight.displayName = "CSS(TouchableHighlight)";
 ### Image Component (`src/tw/image.tsx`)
 
 ```tsx
-import { useCssElement } from "react-native-css";
 import React from "react";
 import { StyleSheet } from "react-native";
+import { useCssElement } from "react-native-css";
 import Animated from "react-native-reanimated";
 import { Image as RNImage } from "expo-image";
 
@@ -282,7 +281,7 @@ function CSSImage(props: React.ComponentProps<typeof AnimatedExpoImage>) {
 }
 
 export const Image = (
-  props: React.ComponentProps<typeof CSSImage> & { className?: string }
+  props: React.ComponentProps<typeof CSSImage> & { className?: string },
 ) => {
   return useCssElement(CSSImage, props, { className: "style" });
 };
@@ -293,8 +292,9 @@ Image.displayName = "CSS(Image)";
 ### Animated Components (`src/tw/animated.tsx`)
 
 ```tsx
-import * as TW from "./index";
 import RNAnimated from "react-native-reanimated";
+
+import * as TW from "./index";
 
 export const Animated = {
   ...RNAnimated,
@@ -307,15 +307,15 @@ export const Animated = {
 Import CSS-wrapped components from your tw directory:
 
 ```tsx
-import { View, Text, ScrollView, Image } from "@/tw";
+import { Image, ScrollView, Text, View } from "@/tw";
 
 export default function MyScreen() {
   return (
-    <ScrollView className="flex-1 bg-white">
+    <ScrollView className="bg-white flex-1">
       <View className="p-4 gap-4">
         <Text className="text-xl font-bold text-gray-900">Hello Tailwind!</Text>
         <Image
-          className="w-full h-48 rounded-lg object-cover"
+          className="h-48 w-full rounded-lg object-cover"
           source={{ uri: "https://example.com/image.jpg" }}
         />
       </View>

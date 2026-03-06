@@ -188,9 +188,9 @@ Use `hidden` prop on `NativeTabs` to hide the entire tab bar dynamically:
 **Important**: Two instances render simultaneously — store state outside the component (props, context, or external store).
 
 ```tsx
-import { NativeTabs } from "expo-router/unstable-native-tabs";
 import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
+import { NativeTabs } from "expo-router/unstable-native-tabs";
 
 function MiniPlayer({
   isPlaying,
@@ -268,7 +268,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 <NativeTabs.Trigger name="home">
   <NativeTabs.Trigger.VectorIcon vector={Ionicons} name="home" />
   <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
-</NativeTabs.Trigger>
+</NativeTabs.Trigger>;
 ```
 
 **Prefer SF Symbols + `md` prop over vector icons for native feel.**
@@ -281,6 +281,9 @@ Native tabs don't render headers. Nest Stacks inside each tab for navigation hea
 
 ```tsx
 // app/(tabs)/_layout.tsx
+
+// app/(tabs)/(home)/_layout.tsx
+import Stack from "expo-router/stack";
 import { NativeTabs } from "expo-router/unstable-native-tabs";
 
 export default function TabLayout() {
@@ -293,9 +296,6 @@ export default function TabLayout() {
     </NativeTabs>
   );
 }
-
-// app/(tabs)/(home)/_layout.tsx
-import Stack from "expo-router/stack";
 
 export default function HomeStack() {
   return (
@@ -399,13 +399,13 @@ Configure in app.json:
 7. **Header buttons flicker when navigating between tabs**: Make sure the app is wrapped in a `ThemeProvider`
 
 ```tsx
-import {
-  ThemeProvider,
-  DarkTheme,
-  DefaultTheme,
-} from "@react-navigation/native";
 import { useColorScheme } from "react-native";
 import { Stack } from "expo-router";
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
 
 export default function Layout() {
   const colorScheme = useColorScheme();
@@ -420,8 +420,8 @@ export default function Layout() {
 If the app only uses a light or dark theme, you can directly pass `DarkTheme` or `DefaultTheme` to `ThemeProvider` without checking the color scheme.
 
 ```tsx
-import { ThemeProvider, DarkTheme } from "@react-navigation/native";
 import { Stack } from "expo-router";
+import { DarkTheme, ThemeProvider } from "@react-navigation/native";
 
 export default function Layout() {
   return (

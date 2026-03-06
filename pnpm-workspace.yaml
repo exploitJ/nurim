@@ -4,15 +4,15 @@ packages:
   - tooling/*
 
 catalog:
-  '@eslint/js': ^9.39.2
-  '@tailwindcss/postcss': ^4.2.1
-  '@tailwindcss/vite': ^4.1.16
-  '@tanstack/react-form': ^1.27.7
-  '@tanstack/react-query': ^5.90.21
-  '@trpc/client': ^11.10.0
-  '@trpc/server': ^11.10.0
-  '@trpc/tanstack-react-query': ^11.10.0
-  '@types/node': ^24.10.13
+  "@eslint/js": ^9.39.2
+  "@tailwindcss/postcss": ^4.2.1
+  "@tailwindcss/vite": ^4.1.16
+  "@tanstack/react-form": ^1.27.7
+  "@tanstack/react-query": ^5.90.21
+  "@trpc/client": ^11.10.0
+  "@trpc/server": ^11.10.0
+  "@trpc/tanstack-react-query": ^11.10.0
+  "@types/node": ^24.10.13
   eslint: ^9.39.2
   prettier: ^3.8.1
   tailwindcss: ^4.2.1
@@ -22,11 +22,11 @@ catalog:
 
 catalogs:
   better-auth:
-    '@better-auth/expo': ^1.4.20
+    "@better-auth/expo": ^1.4.20
     better-auth: ^1.4.20
   react19:
-    '@types/react': ~19.2.10
-    '@types/react-dom': ~19.1.7
+    "@types/react": ~19.2.10
+    "@types/react-dom": ~19.1.7
     react: ~19.2.0
     react-dom: ~19.2.0
 
@@ -44,8 +44,8 @@ overrides:
 
 peerDependencyRules:
   ignoreMissing:
-    - '@prettier/plugin-oxc'
+    - "@prettier/plugin-oxc"
 
 publicHoistPattern:
-  - '*eslint*'
-  - '*prettier*'
+  - "*eslint*"
+  - "*prettier*"

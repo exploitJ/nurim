@@ -48,7 +48,7 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
         mainFields: ["module"],
       },
       moduleName,
-      platform
+      platform,
     );
   }
   return context.resolveRequest(context, moduleName, platform);
@@ -104,7 +104,7 @@ export class ReactNativeCanvas {
 
 export const makeWebGPURenderer = (
   context: GPUCanvasContext,
-  { antialias = true }: { antialias?: boolean } = {}
+  { antialias = true }: { antialias?: boolean } = {},
 ) =>
   new THREE.WebGPURenderer({
     antialias,
@@ -117,23 +117,23 @@ export const makeWebGPURenderer = (
 ### 2. fiber-canvas.tsx
 
 ```tsx
-import * as THREE from "three/webgpu";
-import React, { useEffect, useRef } from "react";
 import type { ReconcilerRoot, RootState } from "@react-three/fiber";
-import {
-  extend,
-  createRoot,
-  unmountComponentAtNode,
-  events,
-} from "@react-three/fiber";
 import type { ViewProps } from "react-native";
+import type { CanvasRef } from "react-native-wgpu";
+import React, { useEffect, useRef } from "react";
 import { PixelRatio } from "react-native";
-import { Canvas, type CanvasRef } from "react-native-wgpu";
-
+import { Canvas } from "react-native-wgpu";
 import {
   makeWebGPURenderer,
   ReactNativeCanvas,
 } from "@/lib/make-webgpu-renderer";
+import {
+  createRoot,
+  events,
+  extend,
+  unmountComponentAtNode,
+} from "@react-three/fiber";
+import * as THREE from "three/webgpu";
 
 // Extend THREE namespace for R3F - add all components you use
 extend({
@@ -225,11 +225,11 @@ export const FiberCanvas = ({
 ## Basic 3D Scene
 
 ```tsx
-import * as THREE from "three/webgpu";
-import { View } from "react-native";
 import { useRef } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { View } from "react-native";
 import { FiberCanvas } from "@/lib/fiber-canvas";
+import { useFrame, useThree } from "@react-three/fiber";
+import * as THREE from "three/webgpu";
 
 function RotatingBox() {
   const ref = useRef<THREE.Mesh>(null!);
@@ -343,8 +343,8 @@ export default function Page() {
 ## Animation with useFrame
 
 ```tsx
-import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import * as THREE from "three/webgpu";
 
 function AnimatedMesh() {
@@ -371,9 +371,9 @@ function AnimatedMesh() {
 ## Particle Systems
 
 ```tsx
-import * as THREE from "three/webgpu";
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import * as THREE from "three/webgpu";
 
 function Particles({ count = 500 }) {
   const ref = useRef<THREE.Points>(null!);
@@ -541,11 +541,11 @@ Performance critical?
 ## Example: Complete Game Scene
 
 ```tsx
-import * as THREE from "three/webgpu";
-import { View, Text, Pressable } from "react-native";
-import { useRef, useState, useCallback } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useCallback, useRef, useState } from "react";
+import { Pressable, Text, View } from "react-native";
 import { FiberCanvas } from "@/lib/fiber-canvas";
+import { useFrame, useThree } from "@react-three/fiber";
+import * as THREE from "three/webgpu";
 
 function Player({ position }: { position: THREE.Vector3 }) {
   const ref = useRef<THREE.Mesh>(null!);

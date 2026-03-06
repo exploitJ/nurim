@@ -5,12 +5,17 @@ import tsMeta from "typescript/package.json" with { type: "json" };
 
 const config: Config = {
   endOfLine: "lf",
+  printWidth: 100,
   plugins: [
     "@prettier/plugin-oxc",
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
   ],
   tailwindFunctions: ["cn", "cva"],
+  tailwindStylesheet: path.resolve(
+    import.meta.dirname,
+    "../tailwind/theme.css",
+  ),
   importOrder: [
     "<TYPES>^(node:)",
     "<BUILTIN_MODULES>",
@@ -41,13 +46,24 @@ const config: Config = {
     {
       files: "*.ts.hbs",
       options: {
-        parser: "babel-ts",
+        parser: "typescript",
       },
     },
     {
       files: "*.js.hbs",
       options: {
         parser: "babel",
+      },
+    },
+    {
+      files: [
+        "**/tsconfig.json",
+        "**/tsconfig.json.hbs",
+        "**/tooling/typescript/*.json",
+      ],
+      excludeFiles: "**/package.json",
+      options: {
+        parser: "jsonc",
       },
     },
     {

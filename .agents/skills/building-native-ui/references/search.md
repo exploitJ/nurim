@@ -96,8 +96,8 @@ export function useSearch(options: any = {}) {
 function SearchScreen() {
   const search = useSearch({ placeholder: "Search items..." });
 
-  const filteredItems = items.filter(item =>
-    item.name.toLowerCase().includes(search.toLowerCase())
+  const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
@@ -114,20 +114,20 @@ function SearchScreen() {
 ### Simple Text Filter
 
 ```tsx
-const filtered = items.filter(item =>
-  item.name.toLowerCase().includes(search.toLowerCase())
+const filtered = items.filter((item) =>
+  item.name.toLowerCase().includes(search.toLowerCase()),
 );
 ```
 
 ### Multiple Fields
 
 ```tsx
-const filtered = items.filter(item => {
+const filtered = items.filter((item) => {
   const query = search.toLowerCase();
   return (
     item.name.toLowerCase().includes(query) ||
     item.description.toLowerCase().includes(query) ||
-    item.tags.some(tag => tag.toLowerCase().includes(query))
+    item.tags.some((tag) => tag.toLowerCase().includes(query))
   );
 });
 ```
@@ -137,7 +137,7 @@ const filtered = items.filter(item => {
 For expensive filtering or API calls:
 
 ```tsx
-import { useState, useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function useDebounce<T>(value: T, delay: number): T {
   const [debounced, setDebounced] = useState(value);
@@ -154,11 +154,12 @@ function SearchScreen() {
   const search = useSearch();
   const debouncedSearch = useDebounce(search, 300);
 
-  const filteredItems = useMemo(() =>
-    items.filter(item =>
-      item.name.toLowerCase().includes(debouncedSearch.toLowerCase())
-    ),
-    [debouncedSearch]
+  const filteredItems = useMemo(
+    () =>
+      items.filter((item) =>
+        item.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
+      ),
+    [debouncedSearch],
   );
 
   return <FlatList data={filteredItems} />;

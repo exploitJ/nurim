@@ -56,7 +56,7 @@ export function CreatePostForm() {
 
   return (
     <form
-      className="w-full max-w-2xl"
+      className="max-w-2xl w-full"
       onSubmit={(event) => {
         event.preventDefault();
         void form.handleSubmit();
@@ -123,12 +123,12 @@ export function PostList() {
 
   if (posts.length === 0) {
     return (
-      <div className="relative flex w-full flex-col gap-4">
+      <div className="gap-4 relative flex w-full flex-col">
         <PostCardSkeleton pulse={false} />
         <PostCardSkeleton pulse={false} />
         <PostCardSkeleton pulse={false} />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/10">
+        <div className="inset-0 bg-black/10 absolute flex flex-col items-center justify-center">
           <p className="text-2xl font-bold text-white">No posts yet</p>
         </div>
       </div>
@@ -136,7 +136,7 @@ export function PostList() {
   }
 
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="gap-4 flex w-full flex-col">
       {posts.map((p) => {
         return <PostCard key={p.id} post={p} />;
       })}
@@ -165,15 +165,15 @@ export function PostCard(props: {
   );
 
   return (
-    <div className="bg-muted flex flex-row rounded-lg p-4">
+    <div className="p-4 flex flex-row rounded-lg bg-muted">
       <div className="grow">
-        <h2 className="text-primary text-2xl font-bold">{props.post.title}</h2>
+        <h2 className="text-2xl font-bold text-primary">{props.post.title}</h2>
         <p className="mt-2 text-sm">{props.post.content}</p>
       </div>
       <div>
         <Button
           variant="ghost"
-          className="text-primary cursor-pointer text-sm font-bold uppercase hover:bg-transparent hover:text-white"
+          className="text-sm font-bold hover:text-white cursor-pointer text-primary uppercase hover:bg-transparent"
           onClick={() => deletePost.mutate(props.post.id)}
         >
           Delete
@@ -186,11 +186,11 @@ export function PostCard(props: {
 export function PostCardSkeleton(props: { pulse?: boolean }) {
   const { pulse = true } = props;
   return (
-    <div className="bg-muted flex flex-row rounded-lg p-4">
+    <div className="p-4 flex flex-row rounded-lg bg-muted">
       <div className="grow">
         <h2
           className={cn(
-            "bg-primary w-1/4 rounded-sm text-2xl font-bold",
+            "text-2xl font-bold w-1/4 rounded-sm bg-primary",
             pulse && "animate-pulse",
           )}
         >
@@ -198,7 +198,7 @@ export function PostCardSkeleton(props: { pulse?: boolean }) {
         </h2>
         <p
           className={cn(
-            "mt-2 w-1/3 rounded-sm bg-current text-sm",
+            "mt-2 text-sm w-1/3 rounded-sm bg-current",
             pulse && "animate-pulse",
           )}
         >
