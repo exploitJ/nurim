@@ -14,9 +14,7 @@ export default function Post() {
     <SafeAreaView className="bg-background">
       <Stack.Screen options={{ title: data.title }} />
       <View className="p-4 h-full w-full">
-        <Text className="py-2 text-3xl font-bold text-primary">
-          {data.title}
-        </Text>
+        <Text className="py-2 text-3xl font-bold text-primary">{data.title}</Text>
         <Text className="py-4 text-foreground">{data.content}</Text>
       </View>
     </SafeAreaView>

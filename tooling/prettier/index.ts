@@ -12,10 +12,7 @@ const config: Config = {
     "prettier-plugin-tailwindcss",
   ],
   tailwindFunctions: ["cn", "cva"],
-  tailwindStylesheet: path.resolve(
-    import.meta.dirname,
-    "../tailwind/theme.css",
-  ),
+  tailwindStylesheet: path.resolve(import.meta.dirname, "../tailwind/theme.css"),
   importOrder: [
     "<TYPES>^(node:)",
     "<BUILTIN_MODULES>",
@@ -56,11 +53,7 @@ const config: Config = {
       },
     },
     {
-      files: [
-        "**/tsconfig.json",
-        "**/tsconfig.json.hbs",
-        "**/tooling/typescript/*.json",
-      ],
+      files: ["**/tsconfig.json", "**/tsconfig.json.hbs", "**/tooling/typescript/*.json"],
       excludeFiles: "**/package.json",
       options: {
         parser: "jsonc",

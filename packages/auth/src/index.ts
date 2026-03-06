@@ -6,9 +6,7 @@ import { oAuthProxy } from "better-auth/plugins";
 
 import { db } from "@acme/db/client";
 
-export function initAuth<
-  TExtraPlugins extends BetterAuthPlugin[] = [],
->(options: {
+export function initAuth<TExtraPlugins extends BetterAuthPlugin[] = []>(options: {
   baseUrl: string;
   productionUrl: string;
   discordClientId: string;

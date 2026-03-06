@@ -7,9 +7,7 @@ import { authEnv } from "@acme/auth/env";
 export const env = createEnv({
   extends: [authEnv(), vercel()],
   shared: {
-    NODE_ENV: z
-      .enum(["development", "production", "test"])
-      .default("development"),
+    NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
   },
   /**
    * Specify your server-side environment variables schema here.
@@ -34,6 +32,5 @@ export const env = createEnv({
 
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
-  skipValidation:
-    !!process.env.CI || process.env.npm_lifecycle_event === "lint",
+  skipValidation: !!process.env.CI || process.env.npm_lifecycle_event === "lint",
 });

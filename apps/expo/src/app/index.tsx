@@ -9,10 +9,7 @@ import type { RouterOutputs } from "~/utils/api";
 import { trpc } from "~/utils/api";
 import { authClient } from "~/utils/auth";
 
-function PostCard(props: {
-  post: RouterOutputs["post"]["all"][number];
-  onDelete: () => void;
-}) {
+function PostCard(props: { post: RouterOutputs["post"]["all"][number]; onDelete: () => void }) {
   return (
     <View className="p-4 flex flex-row rounded-lg bg-muted">
       <View className="grow">
@@ -24,9 +21,7 @@ function PostCard(props: {
           }}
         >
           <Pressable className="">
-            <Text className="text-xl font-semibold text-primary">
-              {props.post.title}
-            </Text>
+            <Text className="text-xl font-semibold text-primary">{props.post.title}</Text>
             <Text className="mt-2 text-foreground">{props.post.content}</Text>
           </Pressable>
         </Link>
@@ -63,9 +58,7 @@ function CreatePost() {
         placeholder="Title"
       />
       {error?.data?.zodError?.fieldErrors.title && (
-        <Text className="mb-2 text-destructive">
-          {error.data.zodError.fieldErrors.title}
-        </Text>
+        <Text className="mb-2 text-destructive">{error.data.zodError.fieldErrors.title}</Text>
       )}
       <TextInput
         className="px-3 text-lg leading-tight items-center rounded-md border border-input bg-background text-foreground"
@@ -74,9 +67,7 @@ function CreatePost() {
         placeholder="Content"
       />
       {error?.data?.zodError?.fieldErrors.content && (
-        <Text className="mb-2 text-destructive">
-          {error.data.zodError.fieldErrors.content}
-        </Text>
+        <Text className="mb-2 text-destructive">{error.data.zodError.fieldErrors.content}</Text>
       )}
       <Pressable
         className="p-2 flex items-center rounded-sm bg-primary"
@@ -90,9 +81,7 @@ function CreatePost() {
         <Text className="text-foreground">Create</Text>
       </Pressable>
       {error?.data?.code === "UNAUTHORIZED" && (
-        <Text className="mt-2 text-destructive">
-          You need to be logged in to create a post
-        </Text>
+        <Text className="mt-2 text-destructive">You need to be logged in to create a post</Text>
       )}
     </View>
   );
@@ -130,8 +119,7 @@ export default function Index() {
 
   const deletePostMutation = useMutation(
     trpc.post.delete.mutationOptions({
-      onSettled: () =>
-        queryClient.invalidateQueries(trpc.post.all.queryFilter()),
+      onSettled: () => queryClient.invalidateQueries(trpc.post.all.queryFilter()),
     }),
   );
 
@@ -147,9 +135,7 @@ export default function Index() {
         <MobileAuth />
 
         <View className="py-2">
-          <Text className="font-semibold text-primary italic">
-            Press on a post
-          </Text>
+          <Text className="font-semibold text-primary italic">Press on a post</Text>
         </View>
 
         <LegendList
@@ -157,15 +143,8 @@ export default function Index() {
           estimatedItemSize={20}
           keyExtractor={(item: RouterOutputs["post"]["all"][number]) => item.id}
           ItemSeparatorComponent={() => <View className="h-2" />}
-          renderItem={({
-            item,
-          }: {
-            item: RouterOutputs["post"]["all"][number];
-          }) => (
-            <PostCard
-              post={item}
-              onDelete={() => deletePostMutation.mutate(item.id)}
-            />
+          renderItem={({ item }: { item: RouterOutputs["post"]["all"][number] }) => (
+            <PostCard post={item} onDelete={() => deletePostMutation.mutate(item.id)} />
           )}
         />
 
