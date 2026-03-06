@@ -4,6 +4,7 @@ import { includeIgnoreFile } from "@eslint/compat";
 import eslintjs from "@eslint/js";
 import prettierConfig from "eslint-config-prettier/flat";
 import turboConfig from "eslint-config-turbo/flat";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import { importX } from "eslint-plugin-import-x";
 import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
@@ -21,8 +22,7 @@ export const restrictEnvAccess = defineConfig(
         {
           object: "process",
           property: "env",
-          message:
-            "Use `import { env } from '~/env'` instead to ensure validated types.",
+          message: "Use `import { env } from '~/env'` instead to ensure validated types.",
         },
       ],
       "no-restricted-imports": [
@@ -30,8 +30,7 @@ export const restrictEnvAccess = defineConfig(
         {
           name: "process",
           importNames: ["env"],
-          message:
-            "Use `import { env } from '~/env'` instead to ensure validated types.",
+          message: "Use `import { env } from '~/env'` instead to ensure validated types.",
         },
       ],
     },
@@ -50,6 +49,11 @@ export const baseConfig = defineConfig(
   importX.flatConfigs.recommended,
   importX.flatConfigs.typescript,
   {
+    settings: {
+      "import-x/resolver-next": [createTypeScriptImportResolver()],
+    },
+  },
+  {
     linterOptions: { reportUnusedDisableDirectives: true },
     languageOptions: {
       parserOptions: {
@@ -64,6 +68,14 @@ export const baseConfig = defineConfig(
       "@typescript-eslint/no-unused-vars": [
         "error",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          checksVoidReturn: {
+            attributes: false,
+          },
+        },
       ],
       "@typescript-eslint/no-unnecessary-condition": [
         "error",

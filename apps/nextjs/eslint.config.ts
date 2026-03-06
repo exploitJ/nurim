@@ -1,3 +1,4 @@
+import { reactRefresh } from "eslint-plugin-react-refresh";
 import { defineConfig } from "eslint/config";
 
 import { baseConfig, restrictEnvAccess } from "@acme/eslint-config/base";
@@ -12,4 +13,10 @@ export default defineConfig(
   reactConfig,
   nextjsConfig,
   restrictEnvAccess,
+  reactRefresh.configs.next(),
+  {
+    rules: {
+      "react-refresh/only-export-components": "warn",
+    },
+  },
 );

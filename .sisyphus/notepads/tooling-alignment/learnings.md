@@ -30,3 +30,25 @@
 - pnpm typecheck passes (13 tasks successful)
 - Committed: chore: add shared react tsconfig preset
 - 4 files changed, 18 insertions(+), 13 deletions(-)
+
+## [2026-03-06] Wave 3: UI Package Export Restructure — COMPLETED
+
+- Moved 8 component files from src/ to src/components/
+- Created src/lib/utils.ts with cn function
+- Updated src/index.ts to re-export cn from lib/utils.ts
+- Updated packages/ui/package.json exports to use wildcard pattern
+- Updated field.tsx self-references: @acme/ui/label → @acme/ui/components/label, etc.
+- Updated apps/nextjs consumer imports to use @acme/ui/components/\*
+- pnpm typecheck passes
+- Committed: refactor(ui): restructure to components/ with wildcard exports
+
+## [2026-03-06] Wave 4: Turbo Config Alignment — COMPLETED
+- Updated turbo.json: added format:fix, lint:fix, quality, quality:fix, //#root:format:fix tasks
+- Updated build task with explicit inputs field: ["$TURBO_DEFAULT$", ".env*", "!.env*.local"]
+- Updated root package.json: simplified format/lint/format:fix/lint:fix scripts (removed pass-through --)
+- Added quality and quality:fix scripts to root
+- Added root:format:fix script with cache strategy metadata
+- Updated root:format to add cache strategy metadata
+- npx turbo run format:fix --dry-run verified task listing (no errors)
+- npx turbo run quality --dry-run verified task listing (no errors)
+- Committed: chore: add quality tasks and structured format/lint fix to turbo
