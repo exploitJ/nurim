@@ -5,13 +5,10 @@ import { useMemo } from "react";
 import { cva } from "class-variance-authority";
 
 import { cn } from "@acme/ui";
-import { Label } from "@acme/ui/label";
-import { Separator } from "@acme/ui/separator";
+import { Label } from "@acme/ui/components/label";
+import { Separator } from "@acme/ui/components/separator";
 
-export function FieldSet({
-  className,
-  ...props
-}: React.ComponentProps<"fieldset">) {
+export function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
   return (
     <fieldset
       data-slot="field-set"
@@ -45,10 +42,7 @@ export function FieldLegend({
   );
 }
 
-export function FieldGroup({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+export function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="field-group"
@@ -61,29 +55,26 @@ export function FieldGroup({
   );
 }
 
-const fieldVariants = cva(
-  "group/field gap-3 flex w-full data-[invalid=true]:text-destructive",
-  {
-    variants: {
-      orientation: {
-        vertical: ["flex-col [&>*]:w-full [&>.sr-only]:w-auto"],
-        horizontal: [
-          "flex-row items-center",
-          "[&>[data-slot=field-label]]:flex-auto",
-          "has-[>[data-slot=field-content]]:items-start has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
-        ],
-        responsive: [
-          "@md/field-group:flex-row @md/field-group:items-center @md/field-group:[&>*]:w-auto flex-col [&>*]:w-full [&>.sr-only]:w-auto",
-          "@md/field-group:[&>[data-slot=field-label]]:flex-auto",
-          "@md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
-        ],
-      },
-    },
-    defaultVariants: {
-      orientation: "vertical",
+const fieldVariants = cva("group/field gap-3 flex w-full data-[invalid=true]:text-destructive", {
+  variants: {
+    orientation: {
+      vertical: ["flex-col [&>*]:w-full [&>.sr-only]:w-auto"],
+      horizontal: [
+        "flex-row items-center",
+        "[&>[data-slot=field-label]]:flex-auto",
+        "has-[>[data-slot=field-content]]:items-start has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+      ],
+      responsive: [
+        "@md/field-group:flex-row @md/field-group:items-center @md/field-group:[&>*]:w-auto flex-col [&>*]:w-full [&>.sr-only]:w-auto",
+        "@md/field-group:[&>[data-slot=field-label]]:flex-auto",
+        "@md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+      ],
     },
   },
-);
+  defaultVariants: {
+    orientation: "vertical",
+  },
+});
 
 export function Field({
   className,
@@ -101,26 +92,17 @@ export function Field({
   );
 }
 
-export function FieldContent({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+export function FieldContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="field-content"
-      className={cn(
-        "group/field-content gap-1.5 leading-snug flex flex-1 flex-col",
-        className,
-      )}
+      className={cn("group/field-content gap-1.5 leading-snug flex flex-1 flex-col", className)}
       {...props}
     />
   );
 }
 
-export function FieldLabel({
-  className,
-  ...props
-}: React.ComponentProps<typeof Label>) {
+export function FieldLabel({ className, ...props }: React.ComponentProps<typeof Label>) {
   return (
     <Label
       data-slot="field-label"
@@ -135,10 +117,7 @@ export function FieldLabel({
   );
 }
 
-export function FieldTitle({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+export function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="field-label"
@@ -151,10 +130,7 @@ export function FieldTitle({
   );
 }
 
-export function FieldDescription({
-  className,
-  ...props
-}: React.ComponentProps<"p">) {
+export function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
   return (
     <p
       data-slot="field-description"
@@ -224,10 +200,7 @@ export function FieldError({
 
     return (
       <ul className="ml-4 gap-1 flex list-disc flex-col">
-        {errors.map(
-          (error, index) =>
-            error.message && <li key={index}>{error.message}</li>,
-        )}
+        {errors.map((error, index) => error.message && <li key={index}>{error.message}</li>)}
       </ul>
     );
   }, [children, maybeErrors]);

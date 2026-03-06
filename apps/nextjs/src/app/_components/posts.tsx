@@ -1,25 +1,15 @@
 "use client";
 
 import { useForm } from "@tanstack/react-form";
-import {
-  useMutation,
-  useQueryClient,
-  useSuspenseQuery,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 
 import type { RouterOutputs } from "@acme/api";
 import { CreatePostSchema } from "@acme/db/schema";
 import { cn } from "@acme/ui";
-import { Button } from "@acme/ui/button";
-import {
-  Field,
-  FieldContent,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@acme/ui/field";
-import { Input } from "@acme/ui/input";
-import { toast } from "@acme/ui/toast";
+import { Button } from "@acme/ui/components/button";
+import { Field, FieldContent, FieldError, FieldGroup, FieldLabel } from "@acme/ui/components/field";
+import { Input } from "@acme/ui/components/input";
+import { toast } from "@acme/ui/components/toast";
 
 import { useTRPC } from "~/trpc/react";
 
@@ -66,8 +56,7 @@ export function CreatePostForm() {
         <form.Field
           name="title"
           children={(field) => {
-            const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
+            const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
             return (
               <Field data-invalid={isInvalid}>
                 <FieldContent>
@@ -90,8 +79,7 @@ export function CreatePostForm() {
         <form.Field
           name="content"
           children={(field) => {
-            const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
+            const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
             return (
               <Field data-invalid={isInvalid}>
                 <FieldContent>
@@ -144,9 +132,7 @@ export function PostList() {
   );
 }
 
-export function PostCard(props: {
-  post: RouterOutputs["post"]["all"][number];
-}) {
+export function PostCard(props: { post: RouterOutputs["post"]["all"][number] }) {
   const trpc = useTRPC();
   const queryClient = useQueryClient();
   const deletePost = useMutation(
@@ -189,19 +175,11 @@ export function PostCardSkeleton(props: { pulse?: boolean }) {
     <div className="p-4 flex flex-row rounded-lg bg-muted">
       <div className="grow">
         <h2
-          className={cn(
-            "text-2xl font-bold w-1/4 rounded-sm bg-primary",
-            pulse && "animate-pulse",
-          )}
+          className={cn("text-2xl font-bold w-1/4 rounded-sm bg-primary", pulse && "animate-pulse")}
         >
           &nbsp;
         </h2>
-        <p
-          className={cn(
-            "mt-2 text-sm w-1/3 rounded-sm bg-current",
-            pulse && "animate-pulse",
-          )}
-        >
+        <p className={cn("mt-2 text-sm w-1/3 rounded-sm bg-current", pulse && "animate-pulse")}>
           &nbsp;
         </p>
       </div>
