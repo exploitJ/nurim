@@ -28,11 +28,13 @@
     "@trpc/tanstack-react-query": "catalog:",
     "better-auth": "catalog:better-auth",
     "next": "^16.1.6",
+    "nuqs": "catalog:",
     "radashi": "^12.7.1",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
     "superjson": "^2.2.6",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "zustand": "catalog:"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
