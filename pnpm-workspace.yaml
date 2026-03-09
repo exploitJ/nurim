@@ -12,32 +12,34 @@ catalog:
   '@trpc/client': ^11.10.0
   '@trpc/server': ^11.10.0
   '@trpc/tanstack-react-query': ^11.10.0
-  '@types/node': ^24.10.13
-  eslint: ^9.39.2
+  '@types/node': ^24.12.0
+  eslint: ^9.39.4
+  nuqs: ^2.8.8
   prettier: ^3.8.1
   tailwindcss: ^4.2.1
   typescript: ^5.9.3
   vite: ^7.1.12
   zod: ^4.3.6
-  nuqs: ^2.8.8
   zustand: ^5.0.11
 
 catalogs:
   better-auth:
-    '@better-auth/expo': ^1.4.20
-    better-auth: ^1.4.20
+    '@better-auth/expo': ^1.5.4
+    better-auth: ^1.5.4
   react19:
     '@types/react': ~19.2.10
     '@types/react-dom': ~19.1.7
-    react: ~19.2.0
-    react-dom: ~19.2.0
+    react: ^19.2.4
+    react-dom: ^19.2.4
 
 linkWorkspacePackages: true
 
 onlyBuiltDependencies:
+  - '@prisma/engines'
   - bufferutil
   - core-js-pure
   - esbuild
+  - prisma
   - sharp
   - unrs-resolver
 
